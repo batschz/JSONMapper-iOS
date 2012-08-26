@@ -19,8 +19,8 @@
 	{
         obj = [[NSClassFromString(objclass) alloc] init];
     } 
-	else 
-	{
+    else
+    {
         obj = objclass;
     }
 
@@ -35,10 +35,10 @@
     NSError* error = nil;
     id result = [NSJSONSerialization dataWithJSONObject:self options:kNilOptions error:&error];
    
-	if (error != nil) 
-	{
-		return nil;
-	}
+    if (error != nil)
+    {
+        return nil;
+    }
 
     return result;
 }
