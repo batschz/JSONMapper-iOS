@@ -6,13 +6,13 @@ This iOS categories try to map json data to your own objects, although it has a 
 # Usage
 Add the NSDictionary+AVJSON.h, NSDictionary+AVJSON.m, NSObject+AVJSON.h, NSObject+AVJSON.m categories to your project
     
-## Json2Object 1. version
+## Json2Object 1. option
 ```
 // ask the mapper for a certain object and let it map certain keys to other objects
 ArtistList *artistList = [rawDict asObjectOfClass:@"ArtistList" nodeMapping:[NSDictionary dictionaryWithObject:@"Artist" forKey:@"results"]];
 ```
 
-## Json2Object 2. version
+## Json2Object 2. option
 ```
 // ask the mapper to extend an existing object
 artistList = [[ArtistList alloc] init];
