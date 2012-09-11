@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3200B04E15FFAB5400099787 /* NSArray+AVJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3200B04D15FFAB5400099787 /* NSArray+AVJSON.m */; };
 		32A0E14915EAA9FE00BBD46F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A0E14815EAA9FE00BBD46F /* UIKit.framework */; };
 		32A0E14B15EAA9FE00BBD46F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A0E14A15EAA9FE00BBD46F /* Foundation.framework */; };
 		32A0E14D15EAA9FE00BBD46F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A0E14C15EAA9FE00BBD46F /* CoreGraphics.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3200B04C15FFAB5400099787 /* NSArray+AVJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AVJSON.h"; sourceTree = "<group>"; };
+		3200B04D15FFAB5400099787 /* NSArray+AVJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AVJSON.m"; sourceTree = "<group>"; };
 		32A0E14415EAA9FE00BBD46F /* JSONMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A0E14815EAA9FE00BBD46F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		32A0E14A15EAA9FE00BBD46F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,6 +139,8 @@
 			children = (
 				32BFDA8E15EBBF3C001E3231 /* NSDictionary+AVJSON.h */,
 				32BFDA8F15EBBF3C001E3231 /* NSDictionary+AVJSON.m */,
+				3200B04C15FFAB5400099787 /* NSArray+AVJSON.h */,
+				3200B04D15FFAB5400099787 /* NSArray+AVJSON.m */,
 				32BFDA9015EBBF3C001E3231 /* NSObject+AVJSON.h */,
 				32BFDA9115EBBF3C001E3231 /* NSObject+AVJSON.m */,
 			);
@@ -213,6 +218,7 @@
 				32A0E17D15EAAE9E00BBD46F /* Artist.m in Sources */,
 				32BFDA9215EBBF3C001E3231 /* NSDictionary+AVJSON.m in Sources */,
 				32BFDA9315EBBF3C001E3231 /* NSObject+AVJSON.m in Sources */,
+				3200B04E15FFAB5400099787 /* NSArray+AVJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

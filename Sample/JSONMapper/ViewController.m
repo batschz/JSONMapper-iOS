@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 #import "NSDictionary+AVJSON.h"
+#import "NSArray+AVJSON.h"
 #import "NSObject+AVJSON.h"
 #import "ArtistList.h"
 #import "Artist.h"
@@ -50,11 +51,20 @@
     
     
     
+    // Json2ArrayOfObjects 2. version
+    // ask the mapper to extend an existing object
+    NSArray *artistArray = [[rawDict objectForKey:@"results"] asObjectOfClass:@"Artist" nodeMapping:nil];
+    for (Artist *artist in artistArray) {
+        NSLog(@"V3 Artist name: %@",artist.artistName);
+    }
+    
+    
+    
     // Object2Json
     // ask the mapper to recursively export the ivars we are asking for in our keysForExport selector
     // the result is a json string
     NSLog(@"JSON: %@",[artistList dictionaryWithValuesForKeys:[artistList keysForExport]]);
     
-}
+ }
 
 @end

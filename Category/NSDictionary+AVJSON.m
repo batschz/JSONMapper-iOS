@@ -8,7 +8,7 @@
 #import "NSDictionary+AVJSON.h"
 #import "NSObject+AVJSON.h"
 
-@implementation NSDictionary (NSDictionary_AVJSON)
+@implementation NSDictionary (AVJSON)
 
 
 - (id)asObjectOfClass:(id)objclass nodeMapping:(NSDictionary*)mapping
@@ -23,14 +23,14 @@
     {
         obj = objclass;
     }
-
+    
     [(NSObject*)obj setValuesForKeysWithDictionary:self nodeMapping:mapping];
 
     return obj;
 }
 
 
-- (NSData*)toJSON 
+- (NSData*)toJSON
 {
     NSError* error = nil;
     id result = [NSJSONSerialization dataWithJSONObject:self options:kNilOptions error:&error];

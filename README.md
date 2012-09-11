@@ -19,6 +19,12 @@ artistList = [[ArtistList alloc] init];
 [rawDict asObjectOfClass:artistList nodeMapping:[NSDictionary dictionaryWithObject:@"Artist" forKey:@"results"]];
 ```
         
+## Json2ArrayOfObjects 3. option
+```
+// ask the mapper to return an array of certain objects
+NSArray *artistArray = [[rawDict objectForKey:@"results"] asObjectOfClass:@"Artist" nodeMapping:nil];
+```
+        
 ## Object2Json
 ```
 // ask the mapper to recursively export the ivars we are asking for in our keysForExport selector

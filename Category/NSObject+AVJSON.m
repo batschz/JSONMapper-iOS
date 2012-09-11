@@ -8,7 +8,7 @@
 #import "NSObject+AVJSON.h"
 #import "NSDictionary+AVJSON.h"
 
-@implementation NSObject (NSObject_AVJSON)
+@implementation NSObject (AVJSON)
 
 
 /**

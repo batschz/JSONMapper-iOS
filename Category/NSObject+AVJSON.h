@@ -5,7 +5,7 @@
 //  Copyright 2011 Appventures. All rights reserved.
 //
 
-@interface NSObject (NSObject_AVJSON)
+@interface NSObject (AVJSON)
 
 - (NSArray*)keysForExport;
 - (void)setValuesForKeysWithDictionary:(NSDictionary*)dict nodeMapping:(NSDictionary*)mapping;
