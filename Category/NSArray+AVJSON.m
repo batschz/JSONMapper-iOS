@@ -8,7 +8,6 @@
 
 #import "NSArray+AVJSON.h"
 #import "NSObject+AVJSON.h"
-#import "Artist.h"
 
 @implementation NSArray (AVJSON)
 
