@@ -32,4 +32,4 @@ NSArray *artistArray = [[rawDict objectForKey:@"results"] asObjectOfClass:@"Arti
 NSLog(@"JSON: %@",[artistList dictionaryWithValuesForKeys:[artistList keysForExport]]);
 ```
 
-Feel free to extend in any way
+Feel free to extend this helper.
