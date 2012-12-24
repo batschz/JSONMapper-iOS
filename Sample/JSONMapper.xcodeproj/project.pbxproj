@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C255AB516887103001CFD4C /* CustomArtistList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C255AB416887103001CFD4C /* CustomArtistList.m */; };
+		2C5E0A8216886D98004CF4F4 /* CustomArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E0A8116886D98004CF4F4 /* CustomArtist.m */; };
 		3200B04E15FFAB5400099787 /* NSArray+AVJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3200B04D15FFAB5400099787 /* NSArray+AVJSON.m */; };
 		32A0E14915EAA9FE00BBD46F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A0E14815EAA9FE00BBD46F /* UIKit.framework */; };
 		32A0E14B15EAA9FE00BBD46F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A0E14A15EAA9FE00BBD46F /* Foundation.framework */; };
@@ -23,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C255AB316887103001CFD4C /* CustomArtistList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomArtistList.h; sourceTree = "<group>"; };
+		2C255AB416887103001CFD4C /* CustomArtistList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomArtistList.m; sourceTree = "<group>"; };
+		2C5E0A8016886D98004CF4F4 /* CustomArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomArtist.h; sourceTree = "<group>"; };
+		2C5E0A8116886D98004CF4F4 /* CustomArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomArtist.m; sourceTree = "<group>"; };
 		3200B04C15FFAB5400099787 /* NSArray+AVJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AVJSON.h"; sourceTree = "<group>"; };
 		3200B04D15FFAB5400099787 /* NSArray+AVJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AVJSON.m"; sourceTree = "<group>"; };
 		32A0E14415EAA9FE00BBD46F /* JSONMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +136,10 @@
 				32A0E17915EAAE8F00BBD46F /* ArtistList.m */,
 				32A0E17B15EAAE9E00BBD46F /* Artist.h */,
 				32A0E17C15EAAE9E00BBD46F /* Artist.m */,
+				2C5E0A8016886D98004CF4F4 /* CustomArtist.h */,
+				2C5E0A8116886D98004CF4F4 /* CustomArtist.m */,
+				2C255AB316887103001CFD4C /* CustomArtistList.h */,
+				2C255AB416887103001CFD4C /* CustomArtistList.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -219,6 +229,8 @@
 				32BFDA9215EBBF3C001E3231 /* NSDictionary+AVJSON.m in Sources */,
 				32BFDA9315EBBF3C001E3231 /* NSObject+AVJSON.m in Sources */,
 				3200B04E15FFAB5400099787 /* NSArray+AVJSON.m in Sources */,
+				2C5E0A8216886D98004CF4F4 /* CustomArtist.m in Sources */,
+				2C255AB516887103001CFD4C /* CustomArtistList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

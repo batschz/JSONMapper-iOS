@@ -8,6 +8,7 @@
 @interface NSObject (AVJSON)
 
 - (NSArray*)keysForExport;
+- (NSDictionary *)propertyMapping;
 - (void)setValuesForKeysWithDictionary:(NSDictionary*)dict nodeMapping:(NSDictionary*)mapping;
 
 @end

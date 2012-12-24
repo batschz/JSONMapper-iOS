@@ -13,6 +13,8 @@
 #import "NSObject+AVJSON.h"
 #import "ArtistList.h"
 #import "Artist.h"
+#import "CustomArtist.h"
+#import "CustomArtistList.h"
 
 
 @implementation ViewController
@@ -75,6 +77,17 @@
     // the result is a ready made object structure without any manual mapping
     for (Artist *artist in [artistList results]) {
         NSLog(@"V1 Artist name: %@ %@",artist.artistName, [artist.artistId stringValue]); // call a nsnumber method
+    }
+    
+    
+    // custom json -> property mapping
+    json = @"{\"resultCount\":2,\"results\": [{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Jack Johnson\", \"artistLinkUrl\":\"https://itunes.apple.com/us/artist/jack-johnson/id909253?uo=4\", \"artistId\":\"909253\", \"amgArtistId\":468749, \"primaryGenreName\":\"Rock\", \"primaryGenreId\":21},{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"U2\", \"artistLinkUrl\":\"https://itunes.apple.com/us/artist/u2/id78500?uo=4\", \"artistId\":\"78500\", \"amgArtistId\":5723, \"primaryGenreName\":\"Rock\", \"primaryGenreId\":21}]}";
+    rawJsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+    rawDict = [NSJSONSerialization JSONObjectWithData:rawJsonData options:NSJSONReadingMutableLeaves error:nil];
+    
+    CustomArtistList *customArtistList = [rawDict asObjectOfClass:@"CustomArtistList" nodeMapping:[NSDictionary dictionaryWithObject:@"CustomArtist" forKey:@"results"]];
+    for (CustomArtist *artist in [customArtistList artistList]) {
+        NSLog(@"V1 Artist name: %@ %@",artist.name, [artist.artistId stringValue]); // call a nsnumber method
     }
     
  }

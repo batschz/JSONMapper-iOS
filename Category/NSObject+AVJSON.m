@@ -18,6 +18,13 @@
  */
 - (NSString*)keyExceptionForSourceKey:(NSString*)source
 {
+    
+    NSDictionary *mapping = [self propertyMapping];
+    
+    if([mapping.allKeys containsObject:source]) {
+        return [mapping objectForKey:source];
+    }
+    
     if([source isEqualToString:@"id"])
     {
         return @"ident";
@@ -175,6 +182,10 @@
  */
 - (NSArray*)keysForExport {
     return [NSArray array];
+}
+
+- (NSDictionary *)propertyMapping {
+    return [NSDictionary dictionary];
 }
 
 @end
