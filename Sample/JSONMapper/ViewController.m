@@ -38,7 +38,6 @@
     }
     
     
-    
     // Json2Object 2. version
     // ask the mapper to extend an existing object
     artistList = [[ArtistList alloc] init];
@@ -64,6 +63,19 @@
     // ask the mapper to recursively export the ivars we are asking for in our keysForExport selector
     // the result is a json string
     NSLog(@"JSON: %@",[artistList dictionaryWithValuesForKeys:[artistList keysForExport]]);
+    
+    
+    
+    // manipulate the json string, number values have quotes - this can be happen with php and other typeless webservices
+    NSString *json = @"{\"resultCount\":2,\"results\": [{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"Jack Johnson\", \"artistLinkUrl\":\"https://itunes.apple.com/us/artist/jack-johnson/id909253?uo=4\", \"artistId\":\"909253\", \"amgArtistId\":468749, \"primaryGenreName\":\"Rock\", \"primaryGenreId\":21},{\"wrapperType\":\"artist\", \"artistType\":\"Artist\", \"artistName\":\"U2\", \"artistLinkUrl\":\"https://itunes.apple.com/us/artist/u2/id78500?uo=4\", \"artistId\":\"78500\", \"amgArtistId\":5723, \"primaryGenreName\":\"Rock\", \"primaryGenreId\":21}]}";
+    
+    rawJsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+    rawDict = [NSJSONSerialization JSONObjectWithData:rawJsonData options:NSJSONReadingMutableLeaves error:nil];
+    artistList = [rawDict asObjectOfClass:@"ArtistList" nodeMapping:[NSDictionary dictionaryWithObject:@"Artist" forKey:@"results"]];
+    // the result is a ready made object structure without any manual mapping
+    for (Artist *artist in [artistList results]) {
+        NSLog(@"V1 Artist name: %@ %@",artist.artistName, [artist.artistId stringValue]); // call a nsnumber method
+    }
     
  }
 

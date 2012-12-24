@@ -7,6 +7,7 @@
 
 #import "NSObject+AVJSON.h"
 #import "NSDictionary+AVJSON.h"
+#import <objc/runtime.h>
 
 @implementation NSObject (AVJSON)
 
@@ -79,10 +80,21 @@
                                                                withString:[[selectorKey substringToIndex:1] capitalizedString]];
             SEL selector = NSSelectorFromString([@"set" stringByAppendingFormat:@"%@:",selectorKey]);
             
+            id value = [dict valueForKey:key];
+            
+            if([value isKindOfClass:[NSString class]] && [self isNumberProperty:key])
+            {
+                NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+                [f setDecimalSeparator:@"."];
+                [f setNumberStyle:NSNumberFormatterDecimalStyle];
+                NSNumber *number = [f numberFromString:value];
+                value = number;
+            }
+            
             if([self respondsToSelector:selector])
             {
                 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                [self performSelector:selector withObject:[dict valueForKey:key]];
+                [self performSelector:selector withObject:value];
             }
             else
             {
@@ -143,6 +155,17 @@
     }
     
     return result;
+}
+
+/**
+ * BOOL if the property with the given name is a NSNumber property
+ * @return BOOL if the property with the given name is a NSNumber property
+ */
+- (BOOL)isNumberProperty:(NSString *)property {
+    objc_property_t prop = class_getProperty([self class], property.UTF8String);
+    BOOL success = (prop != NULL && strstr(property_getAttributes(prop),"NSNumber") != NULL);
+    
+    return success;
 }
 
 
