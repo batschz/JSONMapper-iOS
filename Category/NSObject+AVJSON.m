@@ -185,7 +185,7 @@
 }
 
 - (NSDictionary *)propertyMapping {
-    return [NSDictionary dictionary];
+    return nil;
 }
 
 @end
